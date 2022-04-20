@@ -1,0 +1,34 @@
+.cards {
+  display: flex;
+  padding: 24px;
+  justify-content: space-between;
+  gap: 8px 40px;
+  .card-category {
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    padding: 24px;
+  }
+}
+
+.container {
+  margin: auto;
+  justify-content: center;
+
+}
+
+h2 {
+  margin-top: 40px;
+  margin-left: 24px;
+
+}
