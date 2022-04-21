@@ -5,3 +5,10 @@
 @import "navbar";
 @import "banner";
 @import "card-category";
+@import "button";
+
+
+.container {
+  margin: auto;
+  display: grid;
+}
