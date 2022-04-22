@@ -6,17 +6,18 @@
 </div>
 
 <div class="container">
-  <h2>My lists</h2>
-   <%= link_to "Create a movie list", new_list_path, class:"btn btn-ghost" %>
+  <div class="small-navbar">
+    <h2>My lists</h2>
+    <%= link_to "Create a movie list", new_list_path, class:"btn btn-ghost" %>
+  </div>
+
     <div class="cards">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/04/03/12/Casablanca.jpg?quality=75&width=990&auto=webp&crop=982:726,smart)">
-        Classical
-      </div>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.denofgeek.com/wp-content/uploads/2017/11/thor_ragnarok_comedy_marvel-1.jpg?resize=768%2C432)">
-        Superhero
-      </div>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/hbz-lgbt-films-portrait-of-a-lady-on-fire-everett-1589819041.jpg)">
-        Queer romance
-      </div>
+      <% @lists.each do |list| %>
+        <%= link_to list_path(list), class:'text-decoration-none' do %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.image_url %>)">
+            <%= list.name %>
+          </div>
+        <% end %>
+      <% end %>
     </div>
 </div>

@@ -1,4 +1,23 @@
-<h1><%= @list.name %></h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/04/03/12/Casablanca.jpg?quality=75&width=990&auto=webp&crop=982:726,smart);">
+  <div class="container">
+    <h1><%= @list.name %></h1>
+  </div>
+</div>
 
+<div class="small-navbar-movie">
+    <%= link_to "Add a movie", new_list_bookmark_path(@list), class:"btn btn-ghost" %>
+</div>
 
+<div class="movie-list">
+  <% @list.bookmarks.each do |bookmark| %>
+    <%= image_tag bookmark.movie.poster_url, alt: "movie poster" %>
+    <h5><%= bookmark.movie.title %></h5>
+    <p> <%= bookmark.movie.rating %> ⭐️</p>
+    <p> <%= bookmark.movie.overview %> </p>
+    <p><strong>Review</strong></p>
+    <p><%= bookmark.comment %></p>
+    <button class="delete-movie btn btn-danger">Delete</button>
+    <%= link_to "", bookmark_path(bookmark), method: :delete, id:"delete-bookmark", class: "hidden" %>
+  <% end %>
+</div>
 <%= link_to "Homepage", lists_path %>
