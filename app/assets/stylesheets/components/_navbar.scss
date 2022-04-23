@@ -11,6 +11,16 @@
   width: 40px;
 }
 
+.nav_link a {
+  text-decoration: none;
+  padding: 0 16px;
+  color: darkgray;
+
+  :hover {
+    color: darkgray;
+    opacity: 0.7;
+  }
+}
 .small-navbar {
   display: flex;
   justify-content: space-between;
