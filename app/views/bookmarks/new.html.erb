@@ -1,1 +1,8 @@
-<h1>new bookmark</h1>
+<h1><%= "Add a movie to #{@list.name}" %></h1>
+<br>
+<%= simple_form_for(@movie) do |f| %>
+  <%= f.input :title, placeholder: 'Add a title' %>
+  <%= f.input :overview, placeholder: 'Add the synopsis' %>
+
+  <%= f.submit "Create", class: "btn btn-primary" %>
+<% end %>
