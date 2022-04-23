@@ -1,6 +1,6 @@
 <h1>Create your movie list</h1>
  <%= simple_form_for(@list) do |f| %>
   <%= f.input :name, placeholder: 'Add a list name: drama, feminist...' %>
-  <%= f.input :image_url, placeholder: 'Add a list name: drama, feminist...' %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit "Create", class: "btn btn-primary" %>
 <% end %>
